@@ -1,0 +1,111 @@
+<!-- 尚硅谷 HTML5 2016年-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--<link href="img/logo.png" rel="shortcut icon" type="image/x-icon"/>-->
+    <title>xxxxx</title>
+
+    <style type="text/css">
+        /** 添加样式 **/
+    </style>
+</head>
+<body>
+    <div id="qrcode"></div>
+
+    <img src="http://img4.imgtn.bdimg.com/it/u=3232819934,42537062&fm=21&gp=0.jpg" alt="">
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+<script type="text/javascript" src="js/shake.js"></script>
+<script type="text/javascript">
+    //添加脚本
+    var a = 'egerg556';
+    console.log(a.replace(/\d{2}$/,"00"));
+
+    
+
+    //jQuery 字符串转二维码
+    $('#qrcode').qrcode("this plugin is great");
+    $('#qrcode').qrcode({width: 64,height: 64,text: "size doesn't matter"});
+     
+    //监听变量调用函数
+    var count = 0;
+    var change = 0;
+
+    var time = setInterval(function () {
+
+        if(change != count){  //count 改变
+            change = count;
+            console.log(change);
+        }else {
+            return;
+        }
+    },100);
+    var time2 = setInterval(function () {
+        count+=2;
+        if(count == 50){
+            clearInterval(time2);
+        }
+    },1000);
+
+    //对电话号码进行****处理
+    var myphone = 0, lphone =0;
+        $('.contact_mobile').each(function(index,item){
+        myphone = $('.contact_mobile').eq(index).html().substr(3,4);
+        lphone = $('.contact_mobile').eq(index).html().replace(myphone,"****");
+        $('.contact_mobile').eq(index).html(lphone);
+    });
+
+
+    //手机摇一摇功能
+ 
+    var myShakeEvent = new Shake({
+        threshold: 15, // optional shake strength threshold
+        timeout: 1000 // optional, determines the frequency of event generation
+    });
+        //Start listening to device motion:
+    myShakeEvent.start();
+        //Register a shake event listener on window with your callback:
+    window.addEventListener('shake', shakeEventDidOccur, false);
+
+    //function to call when shake occurs
+    function shakeEventDidOccur () {
+        //put your own code here etc.
+        alert('shake!');
+    }
+    //You can stop listening for shake events like so:
+    window.removeEventListener('shake', shakeEventDidOccur, false);
+    
+    // To stop listening to device motion, you can call:
+    myShakeEvent.stop();
+
+
+    var data = {
+        violations: [
+            {
+                violated_at:"YYYY-MM-DD HH:MM:SS",
+                address: "316省道53KM+200M",
+                description: "16362 : 驾驶中型以上载客载货汽车、校车、危险物品运输车辆以外的其他机动车在高速公路以外的道路上行驶超过",
+                code: "code",
+                point: 6,
+                fine: 100,
+                is_handled: 0
+            }
+        ]
+      };
+    var obj = {
+        aa : 'gegerg',
+        bb : data
+    }
+
+    console.log(obj);
+</script>
+</body>
+</html>
