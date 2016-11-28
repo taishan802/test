@@ -1,0 +1,53 @@
+<!-- 尚硅谷 HTML5 2016年-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--<link href="img/logo.png" rel="shortcut icon" type="image/x-icon"/>-->
+    <title>xxxxx</title>
+
+    <style type="text/css">
+        /** 添加样式 **/
+    </style>
+</head>
+<body>
+    <div id="qrcode"></div>
+
+    <img src="http://img4.imgtn.bdimg.com/it/u=3232819934,42537062&fm=21&gp=0.jpg" alt="">
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+<script type="text/javascript" src="js/shake.js"></script>
+<script type="text/javascript">
+    //添加脚本
+
+    //监听变量调用函数
+    var count = 0;
+    var change = 0;
+
+    var time = setInterval(function () {
+
+        if(change != count){  //count 改变
+            change = count;
+            console.log(change);
+        }else {
+            return;
+        }
+    },100);
+    var time2 = setInterval(function () {
+        count+=2;
+        if(count == 50){
+            clearInterval(time2);
+        }
+    },1000);
+
+ 
+</script>
+</body>
+</html>
