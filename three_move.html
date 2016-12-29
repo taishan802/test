@@ -30,7 +30,7 @@
      <p id="p1"></p>
 <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
 <script type="text/javascript">
-
+      var data = {};
       var dists = {
         86: {
           110000: '北京市',
@@ -4188,6 +4188,7 @@
         return areas;
       }
       
+      console.log(dists[86]);
       //根据地名获取code
       function getKeyByName(name, parentKey){
         var temp = null;

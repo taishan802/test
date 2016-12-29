@@ -1,0 +1,54 @@
+<!-- 尚硅谷 HTML5 2016年-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--<link href="img/logo.png" rel="shortcut icon" type="image/x-icon"/>-->
+    <title>xxxxx</title>
+
+    <style type="text/css">
+        /** 添加样式 **/
+    </style>
+</head>
+<body>
+    <div id="qrcode"></div>
+
+    <img src="http://img4.imgtn.bdimg.com/it/u=3232819934,42537062&fm=21&gp=0.jpg" alt="">
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+<script type="text/javascript" src="js/shake.js"></script>
+<script type="text/javascript">
+    //添加脚本
+
+   /**
+     * [countDownBySecond 倒计时]
+     * @param  {[Int]} restSeconds   [剩余秒数，必填]
+     * @param  {[Int]} timeInterval   [时间间隔，非必填，默认1000ms]
+     * @param  {[Function]} func   [每倒计时一次，就需要执行一次的回调函数名，非必填]
+     * @param  {[Function]} endFun [倒计时结束需要执行的函数名，非必填]
+     * @return {[null]}        [无返回值]
+     */
+    export function countDownBySecond(restSeconds, timeInterval, func, endCallback) {
+        let timer = null;
+        let total = restSeconds;
+        timeInterval = timeInterval ? timeInterval : 1000;
+        timer = setInterval(function() {
+            --total;
+            if (total <= 0) {
+                clearInterval(timer);
+                endCallback && endCallback(); 
+            }
+            func && func(total);
+        }, timeInterval);
+    }
+     
+</script>
+</body>
+</html>
