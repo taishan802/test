@@ -24,8 +24,9 @@
 <script type="text/javascript" src="./js/fastclick.js"></script>
 <script type="text/javascript">
     //添加脚本
-    FastClick.attach(document.body);
+    
     $(function(){
+        FastClick.attach(document.body);
         $('#aa').on('touchstart', function(){
             console.log('cccc');
         })
