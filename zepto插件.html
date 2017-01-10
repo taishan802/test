@@ -18,18 +18,18 @@
     </style>
 </head>
 <body>
-    <div id="qrcode"></div>
-    <a href="###" data-id="exchangeNow" class="exchangeNow">查看优惠卷</a>
-<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
-<script type="text/javascript" src="js/shake.js"></script>
+    <a href="javascript:void(0);" id="aa">查看优惠卷</a>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript" src="./js/fastclick.js"></script>
 <script type="text/javascript">
     //添加脚本
- 
-      var aa = 'wewefw-112wfw';
-      var bb = aa.match(/\d+/);
-      console.log(bb);
-
+    FastClick.attach(document.body);
+    $(function(){
+        $('#aa').on('click', function(){
+            console.log('bbbbb');
+        })
+    })
 </script>
 </body>
 </html>
