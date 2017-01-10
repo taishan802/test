@@ -26,9 +26,14 @@
     //添加脚本
     FastClick.attach(document.body);
     $(function(){
+        $('#aa').on('touchstart', function(){
+            console.log('cccc');
+        })
+        
         $('#aa').on('click', function(){
             console.log('bbbbb');
         })
+        
     })
 </script>
 </body>
