@@ -10,6 +10,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
+
+<!-- Bugfix: 关闭index.html文件缓存，强制每次都重新访问服务器 -->
+<!--     <meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+ -  <meta http-equiv="cache-control" content="no-cache"/>
+ +  HTTP 1.0
+ +  <meta http-equiv="pragma" content="no-cache"/>
+ +  HTTP 1.1
+ +  <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta content="email=no" name="format-detection">
+ +  Prevent caching at the proxy server
+<meta http-equiv="expires" content="0"/>
+<link rel="stylesheet" type="text/css" href="_APP_CSS">
+  </head>
+ -->
+
     <!--<link href="img/logo.png" rel="shortcut icon" type="image/x-icon"/>-->
     <title>xxxxx</title>
 
